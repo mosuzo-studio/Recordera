@@ -1,21 +1,24 @@
 # 部署 Recordera 站点到 GitHub Pages，自定义域：recordera.mosuzo.com
+# 仓库：github.com/mosuzo-studio/Recordera（默认分支 master）
 #
 # 一次性前置配置（只需做一次）：
-#   1. 仓库 Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"
-#   2. 同页面 Custom domain 填 recordera.mosuzo.com 并 Save，勾选 Enforce HTTPS
-#   3. DNS 添加 CNAME 记录：recordera.mosuzo.com → <你的用户名>.github.io
-#      （需删除该主机名上已有的 A/AAAA 记录，不要用泛解析 *.mosuzo.com）
+#   1. 仓库 Settings → Pages → Build and deployment → Source 选 "GitHub Actions"
+#   2. 同页面 Custom domain 填 recordera.mosuzo.com 并 Save，然后勾选 Enforce HTTPS
+#   3. DNS 添加记录：recordera.mosuzo.com  CNAME  mosuzo-studio.github.io
+#      （需先删掉该主机名上已有的 A/AAAA 记录；不要用泛解析 *.mosuzo.com）
 #
-# 可选自动化：如果想用本 workflow 自动设置 Custom domain，
+# 可选自动化：如果想用本 workflow 自动写入 Custom domain，
 #   新建仓库 Secret `PAGES_PAT`（PAT，需 repo 或 pages:write 权限），
-#   下面的 "Set custom domain" 步骤就会自动执行；未配置时该步骤自动跳过。
-#   注意：默认的 GITHUB_TOKEN 无权修改 Pages 设置，所以必须用 PAT。
+#   下面的 "Set custom domain" 步骤就会执行；未配置该 secret 时自动跳过。
+#   注意：默认的 GITHUB_TOKEN 无权修改 Pages 设置，必须用 PAT。
+#   注意：GitHub 官方文档指出，用自定义 Actions 发布时 CNAME 文件会被忽略，
+#   域名以仓库设置里的值为准；仓库根目录的 CNAME 文件保留是为兼容分支发布方式。
 
 name: Deploy recordera.mosuzo.com to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -48,10 +51,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAGES_PAT }}
         run: |
-          gh api -X PUT "repos/${{ github.repository }}/pages" \
-            -f cname="$CUSTOM_DOMAIN" \
-            -f build_type="workflow" \
-            --silent
+          if gh api "repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            gh api -X PUT "repos/${{ github.repository }}/pages" \
+              -f cname="$CUSTOM_DOMAIN" --silent
+          else
+            gh api -X POST "repos/${{ github.repository }}/pages" \
+              -f cname="$CUSTOM_DOMAIN" -f build_type="workflow" --silent
+          fi
           echo "Custom domain set to $CUSTOM_DOMAIN"
 
       - name: Upload artifact
