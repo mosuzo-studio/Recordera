@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recordera 录屏 — 把屏幕上的操作，录成能直接发的视频</title>
+<meta name="description" content="Recordera 是一款轻量录屏工具。按一下快捷键，框选区域，录制、截图、标注、分享一次完成，所有内容都留在本机。免费使用，无水印，支持 Windows 与 macOS。">
+<link rel="canonical" href="https://recordera.mosuzo.com/zh-Hans/">
+
+<!-- 多语言：请把 recordera.mosuzo.com 替换成你的真实域名 -->
+<link rel="alternate" hreflang="en" href="https://recordera.mosuzo.com/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://recordera.mosuzo.com/zh-Hans/">
+<link rel="alternate" hreflang="x-default" href="https://recordera.mosuzo.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recordera 录屏">
+<meta property="og:description" content="把屏幕上的操作，录成能直接发的视频。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- ================= 顶栏 ================= -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="./">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="1.6" y="1.6" width="20.8" height="20.8" rx="6.4" fill="#111111"/>
+        <circle cx="12" cy="12" r="4.7" fill="#e5484d"/>
+      </svg>
+      Recordera
+    </a>
+
+    <nav class="nav-links">
+      <a href="#features">功能</a>
+      <a href="#how">怎么用</a>
+      <a href="#privacy">隐私</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang">
+        <a href="../en/" hreflang="en" lang="en">EN</a>
+        <a href="./" aria-current="true" hreflang="zh-Hans">中文</a>
+      </div>
+      <a class="btn btn-primary" href="#download">下载</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 首屏 ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="badge"><span class="pulse"></span> 完全本地 · 断网也能用</span>
+
+    <h1>Recordera 录屏</h1>
+
+    <p class="hero-sub">把屏幕上的操作，录成能直接发的视频。</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+        免费下载
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#demo">看 30 秒演示</a>
+    </div>
+
+    <p class="hero-note">Windows 10 / 11 · macOS&nbsp;&nbsp;·&nbsp;&nbsp;无需注册，无水印</p>
+
+    <!-- 产品演示模拟 -->
+    <div class="mock-wrap" id="demo">
+      <div class="mock" role="img" aria-label="Recordera 框选界面，正在录制屏幕上的一个区域">
+        <div class="mock-bar">
+          <i></i><i></i><i></i>
+          <span class="mock-title">Recordera</span>
+        </div>
+        <div class="mock-stage">
+          <div class="skeleton">
+            <div class="sk-head"></div>
+            <div class="sk-row"><div class="sk-col"></div><div class="sk-col"></div><div class="sk-col"></div></div>
+            <div class="sk-line w70"></div>
+            <div class="sk-line"></div>
+            <div class="sk-line w48"></div>
+          </div>
+
+          <div class="marquee">
+            <span class="h h1"></span><span class="h h2"></span><span class="h h3"></span><span class="h h4"></span>
+            <span class="size">1280 × 720</span>
+          </div>
+
+          <div class="toolbar">
+            <span class="tl rec"><span class="dot"></span>00:12</span>
+            <span class="divider"></span>
+            <span class="tl hide-sm">截图</span>
+            <span class="tl hide-sm">标注</span>
+            <span class="divider hide-sm"></span>
+            <span class="tl stop">停止</span>
+          </div>
+        </div>
+      </div>
+      <p class="mock-caption">拖一下定好范围，录出来就是能直接发的尺寸。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 信任条 ================= -->
+<section class="trust">
+  <div class="container trust-inner">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      支持 Windows 10 / 11 与 macOS
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      全程在本机运行，不上传
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg>
+      免费使用，无水印，不限时长
+    </span>
+  </div>
+</section>
+
+<!-- ================= 三大能力 ================= -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">能做什么</p>
+      <h2>录制、截图、发送，一次做完</h2>
+      <p>大多数工具要你在一个软件里录，去第二个软件里剪，再回到第三个地方发。Recordera 把这三步收进一个快捷键里。</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ico t-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M2 6h14a2 2 0 0 1 2 2v14"/></svg>
+        </div>
+        <h3>选区录制</h3>
+        <p>拖一下就能定好范围，尺寸实时显示。录出来就是你框的那一块，不用录完再裁。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico t-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </div>
+        <h3>截图与标注</h3>
+        <p>截完立刻画箭头、加文字、给敏感信息打码，不用再打开修图软件。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="ico t-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+        </div>
+        <h3>一键发送</h3>
+        <p>停止录制的时候，文件已经在剪贴板里了。粘进聊天、文档或工单，直接就发出去了。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 细节能力 ================= -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">细节</p>
+      <h2>把小事做扎实</h2>
+      <p>Recordera 功能很窄。与其什么都做不好，不如只把几件事做好。</p>
+    </div>
+
+    <div class="split">
+      <div class="feat reveal">
+        <div class="ico t-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M2 6h14a2 2 0 0 1 2 2v14"/></svg></div>
+        <div>
+          <h3>精确框选</h3>
+          <p>拖动时实时显示宽高，想录整块窗口时也会自动吸附到窗口边缘。</p>
+        </div>
+      </div>
+
+      <div class="feat reveal">
+        <div class="ico t-sand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l6.5 15.5 2-6 6-2z"/></svg></div>
+        <div>
+          <h3>会说话的光标</h3>
+          <p>自动平滑鼠标轨迹、放大点击动作，观众一眼就能看到重点在哪。</p>
+        </div>
+      </div>
+
+      <div class="feat reveal">
+        <div class="ico t-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <div>
+          <h3>直接写入磁盘</h3>
+          <p>录制内容以最高 4K 60fps 直接写在本机，中间不做压缩，也不经手任何服务器。</p>
+        </div>
+      </div>
+
+      <div class="feat reveal">
+        <div class="ico t-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></div>
+        <div>
+          <h3>快捷键驱动</h3>
+          <p>按一下开始，再按一下结束，不会打断你手上正在做的事。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 三步 ================= -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">怎么用</p>
+      <h2>三步，没有设置项</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>按快捷键</h3>
+        <p>Recordera 安静地待在后台。不管你在做什么，一个键就能唤起来。</p>
+        <span class="kbd">F1</span>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <h3>框选并录制</h3>
+        <p>拖出要录的区域，选好屏幕声音和麦克风，点开始。</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <h3>直接发出去</h3>
+        <p>一停，结果已经在剪贴板里。粘一下就发出去了。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 隐私 ================= -->
+<section class="section section-alt" id="privacy">
+  <div class="container">
+    <div class="dark reveal">
+      <div>
+        <p class="eyebrow" style="color:#7fb2ec">隐私</p>
+        <h2 style="margin-top:14px">你的录制，只属于你</h2>
+        <p>Recordera 默认不上传任何内容。视频写在你自己的机器上，也在你自己的机器上处理，删不删你说了算。不用注册账号，也不用把内容托付给任何云端。</p>
+      </div>
+      <ul class="dark-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg> 录制文件保存在本机，不会排队上传</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg> 完全断网也能正常录制</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg> 没有账号，不采集内容，没有后台流量</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg> 删掉就是真的删掉了，不存在第二份副本</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 常见问题 ================= -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">常见问题</p>
+      <h2>你可能想知道的</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>Recordera 收费吗？
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ans">免费。录制不加水印，单次录制也没有时长限制。</div>
+      </details>
+
+      <details>
+        <summary>支持哪些系统？
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ans">Windows 10 / 11 和 macOS。两个平台各自提供安装包，Windows 是 .exe，macOS 是 .dmg。</div>
+      </details>
+
+      <details>
+        <summary>录制的内容会上传到服务器吗？
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ans">不会。所有录制和截图都保存在你自己的电脑上。Recordera 不会自动上传任何内容，断网状态也能正常使用。</div>
+      </details>
+
+      <details>
+        <summary>能录声音吗？
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ans">可以。麦克风和系统声音能同时录制，并且和画面自动对齐。</div>
+      </details>
+
+      <details>
+        <summary>录制有长短限制吗？
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ans">没有。想录多久录多久，唯一的限制是你硬盘还剩多少空间。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 下载 ================= -->
+<section class="cta section-alt" id="download">
+  <div class="container reveal">
+    <h2>现在就录一个试试</h2>
+    <p>装好，按一下 F1，你会发现在你和一段成片之间，几乎没有别的步骤。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="/download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+        免费下载 Recordera
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#faq">看看常见问题</a>
+    </div>
+    <p class="hero-note">Windows 10 / 11 · macOS&nbsp;&nbsp;·&nbsp;&nbsp;免费使用，无水印</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= 页脚 ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./">
+          <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="1.6" y="1.6" width="20.8" height="20.8" rx="6.4" fill="#111111"/>
+            <circle cx="12" cy="12" r="4.7" fill="#e5484d"/>
+          </svg>
+          Recordera
+        </a>
+        <p>一款轻量的录屏工具，支持 Windows 与 macOS。所有内容都留在你自己的机器上。</p>
+      </div>
+
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="#features">功能</a></li>
+          <li><a href="#how">怎么用</a></li>
+          <li><a href="#download">下载</a></li>
+          <li><a href="#">更新日志</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>支持</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#">使用帮助</a></li>
+          <li><a href="#">问题反馈</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#privacy">隐私政策</a></li>
+          <li><a href="#">服务条款</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Recordera. 保留所有权利。</span>
+      <div class="lang">
+        <a href="../en/" hreflang="en" lang="en">EN</a>
+        <a href="./" aria-current="true" hreflang="zh-Hans">中文</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

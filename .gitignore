@@ -1,0 +1,36 @@
+# ------------------------------------------------------------------
+# WorkBuddy 本地工作数据（记忆 / 技能 / 自动化配置）
+# 如果你希望把项目记忆一起纳入版本管理，删掉下面这一行即可。
+# ------------------------------------------------------------------
+.workbuddy/
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+.cache/
+
+# 环境变量与密钥
+.env
+.env.local
+.env.*.local
+
+# 日志
+*.log
+npm-debug.log*
+yarn-error.log*
